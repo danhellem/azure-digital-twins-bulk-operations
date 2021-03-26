@@ -1,0 +1,19 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "del": "6.0.0",
+    "ndjson": "2.0.0"
+  },
+  "devDependencies": {
+    "gulp-concat": "^2.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dan hellem",
+  "license": "ISC"
+}
