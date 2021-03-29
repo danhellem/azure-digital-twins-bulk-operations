@@ -6,7 +6,7 @@
   "dependencies": {
     "gulp": "^4.0.2",
     "del": "6.0.0",
-    "ndjson": "2.0.0"
+    "fs": "0.0.1-security"
   },
   "devDependencies": {
     "gulp-concat": "^2.6.1"

@@ -16,12 +16,12 @@
       ],
       "name": "temperature",
       "unit": "degreeFahrenheit",
-      "schema": "double",
+      "schema": "double"
     },
     {
       "@type": "Property",
       "name": "humidity",
-      "schema": "double",
+      "schema": "double"
     },
     {
       "@type": "Relationship",
