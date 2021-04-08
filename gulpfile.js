@@ -5,7 +5,7 @@ const gap = require('gulp-append-prepend');
 const fs = require('fs');
 const log = require('fancy-log');
 
-gulp.task('create-file', function (done) {
+gulp.task('create-staging', function (done) {
   log('Creating dist/staging.json from all models in models directory');
 
   gulp
@@ -22,6 +22,7 @@ gulp.task('add-header', function (done) {
     .src('dist/staging.json')
     .pipe(gap.prependText('{"Section": "Models"}', ',\r\n'))
     .pipe(gap.prependFile('header.json', ',\r\n'))
+    .pipe(gap.prependText('{"Section": "Header"}', ',\r\n'))
     .pipe(gap.prependText('[', '\r\n'))
     .pipe(gap.appendText(']'))
     .pipe(concat('staging.json'))
@@ -36,7 +37,7 @@ gulp.task('clean', function (done) {
   done();
 });
 
-gulp.task('ndjson', function (done) {
+gulp.task('create-ndjson', function (done) {
   log('Converting dist/staging.json into ndjson formatted file');
 
   const arrObj = JSON.parse(fs.readFileSync('dist/staging.json'));
@@ -48,9 +49,7 @@ gulp.task('ndjson', function (done) {
 });
 
 
-function defaultTask(cb) {
- 
-  
+function defaultTask(cb) {  
   cb();
 }
 
