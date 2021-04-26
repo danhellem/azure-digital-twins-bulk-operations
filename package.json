@@ -1,7 +1,7 @@
 {
-  "name": "test",
+  "name": "Azure Digital Twins Model Managemnt",
   "version": "1.0.0",
-  "description": "",
+  "description": "Example on how to manage your Azure Digital Twins models using scripts to automate tasks",
   "main": "",
   "dependencies": {
     "gulp": "^4.0.2",
