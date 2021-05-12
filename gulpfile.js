@@ -21,7 +21,7 @@ gulp.task('add-header', (cb) => {
 
   gulp
     .src('dist/staging.json')
-    .pipe(gap.prependText('{"Section": "Models"}', ',\r\n'))
+    .pipe(gap.prependText('{"Section": "Models" "uploadMode": "createOrUpdate"}', ',\r\n'))
     .pipe(gap.prependFile('header.json', ',\r\n'))
     .pipe(gap.prependText('{"Section": "Header"}', ',\r\n'))
     .pipe(gap.prependText('[', '\r\n'))
