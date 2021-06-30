@@ -1,5 +1,5 @@
 {
-  "name": "Azure Digital Twins Model Managemnt",
+  "name": "azure-digital-twins-model-management",
   "version": "1.0.0",
   "description": "Example on how to manage your Azure Digital Twins models using scripts to automate tasks",
   "main": "",
