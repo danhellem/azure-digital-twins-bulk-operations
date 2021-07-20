@@ -19,7 +19,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "export-models": "node scripts/export.js",
-    "blob-import": "node scripts/azure-blob-import.js"
+    "blob-upload": "node scripts/azure-blob-upload.js"
   },
   "author": "dan hellem",
   "license": "ISC"

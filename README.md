@@ -28,8 +28,8 @@ import.ndjosn will be located in the ```/dist``` folder
 <br>chainnig all tasks into a single gulp task
 
 ## Scripts
-```npm run blob-import```
-<br>takes the import.ndjson file and uploads into a designated storage container.
+```npm run blob-upload```
+<br>uploads 'import.ndjson' file into a storage container
 
 The following env variables needs to be set
 

@@ -31,7 +31,7 @@ async function main() {
     return;
   } 
   
-  console.log("Upload 'import.ndjson' file into Azure Container...");
+  console.log("Uploading 'import.ndjson' file into Azure Container...");
   console.log("");
   
   // Create the BlobServiceClient object which will be used to create a container client
@@ -52,7 +52,7 @@ async function main() {
   const blockBlobClient = containerClient.getBlockBlobClient(blobName);
 
   // Upload file from disk
-  console.log('\x1b[32m',"# Upload file '" + blobName + "' start");
+  console.log('\x1b[32m',"# Uploading file '" + blobName + "'");
   const uploadFileResponse = await blockBlobClient.uploadFile(_filePath);
   console.log("\x1b[32m","# Upload complete", "\x1b[0m");
 
