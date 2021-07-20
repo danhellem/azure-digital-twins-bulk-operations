@@ -10,8 +10,6 @@ import.ndjosn will be located in the ```/dist``` folder
 - install [gulp command line utility](https://gulpjs.com/docs/en/getting-started/quick-start/)
 - run task ```gulp default```
 
-
-
 ## Gulp Tasks
 
 ```gulp clean```
@@ -28,3 +26,15 @@ import.ndjosn will be located in the ```/dist``` folder
 
 ```gulp default```
 <br>chainnig all tasks into a single gulp task
+
+## Scripts
+```npm run blob-import```
+<br>takes the import.ndjson file and uploads into a designated storage container.
+
+The following env variables needs to be set
+
+```setx AZURE_STORAGE_CONNECTION_STRING "<your_connection_string>"```
+
+```setx AZURE_STORAGE_CONTAINER_NAME "<your_storage_container_name>"```
+
+Be sure to restart your close and re-open your command window for changes to take affect.
