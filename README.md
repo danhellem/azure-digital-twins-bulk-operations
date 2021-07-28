@@ -1,16 +1,19 @@
-# Convert Azure Ditital Twin Modles to .ndjson format
+# Azure Digital Twins Bulk Operations
+This feature is currently in private preview
+
+## Convert Azure Ditital Twin Modles to .ndjson format
 This is a sample project that converts a set of single Azure Digital Twins model files and converts them into a single import.ndjson file. This file will be basis of the new bulk import functionality available soon in Azure Digital Twins.
 
 import.ndjosn will be located in the ```/dist``` folder
 
-## Setup
+### Setup
 
 - clone the project
 - run npm install
 - install [gulp command line utility](https://gulpjs.com/docs/en/getting-started/quick-start/)
 - run task ```gulp default```
 
-## Gulp Tasks
+### Gulp Tasks
 
 ```gulp clean```
 <br>deletes all the files from the dist folder
@@ -27,7 +30,9 @@ import.ndjosn will be located in the ```/dist``` folder
 ```gulp default```
 <br>chainnig all tasks into a single gulp task
 
-## Scripts
+## Import .ndjson file into Azure Blog Storage
+
+### Scripts
 ```npm run blob-upload```
 <br>uploads 'import.ndjson' file into a storage container
 
