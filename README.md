@@ -27,9 +27,6 @@ import.ndjosn will be located in the ```/dist``` folder
 ```gulp create-ndjson```
 <br>converts the import.json into the import.ndjson file
 
-```gulp default```
-<br>chainnig all tasks into a single gulp task
-
 ## Import .ndjson file into Azure Blog Storage
 
 ### Scripts
@@ -42,4 +39,4 @@ The following env variables needs to be set
 
 ```setx AZURE_STORAGE_CONTAINER_NAME "<your_storage_container_name>"```
 
-Be sure to restart your close and re-open your command window for changes to take affect.
+Be sure to close and re-open your command window for changes to take affect.

@@ -4,21 +4,27 @@
   "description": "Example on how to manage your Azure Digital Twins models using scripts to automate tasks",
   "main": "",
   "dependencies": {
-    "gulp": "^4.0.2",
+    "@azure/msal-node": "^1.3.0",
     "del": "6.0.0",
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "gulp": "^4.0.2",
+    "node-fetch": "^2.6.1",
+    "@azure/identity": "1.5.0",
+    "@azure/digital-twins-core": "^1.0.3"
   },
   "devDependencies": {
     "gulp-concat": "^2.6.1",
     "gulp-append-prepend": "^1.0.9",
     "fancy-log": "^1.3.3",
     "@azure/storage-blob": "^12.0.0",
+    "dotenv": "^6.0.0",
     "@types/dotenv": "^4.0.3",
-    "dotenv": "^6.0.0"
+    "@types/node": "^15.12.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "export-models": "node scripts/export.js",
+    "start-import": "node scripts/import.js",
     "blob-upload": "node scripts/azure-blob-upload.js"
   },
   "author": "dan hellem",

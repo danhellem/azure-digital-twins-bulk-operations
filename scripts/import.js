@@ -1,6 +1,5 @@
 const { DefaultAzureCredential } = require("@azure/identity");
-const { DigitalTwinsClient } = require("@azure/digital-twins-core");
-
+const fetch = require("node-fetch");
 
 require("dotenv").config();
 
@@ -9,22 +8,31 @@ const _adtContext = 'https://digitaltwins.azure.net/.default';
 const _apiVersion = '2020-10-31';
 
 async function main() {
-  
   if (_url == undefined) {
     console.log("\x1b[31m","Azure Digital Twins URL is not yet defined as an env variable.","\x1b[0m");
     return;
   } 
   
-  const credential = new DefaultAzureCredential();
-  const serviceClient = new DigitalTwinsClient(_url, credential); 
-    
-  const models = await serviceClient.listModels();
+  const credential = new DefaultAzureCredential();  
+  var token = null;   
 
-  for await (const model of models) {
-    console.log(`Model ID: ${model.id}`);
-  }
+  console.log("Getting token: attempt");
+  
+  token = await tokenRefresh(token, credential, _adtContext);
+  
+  if (token != null) console.log("Getting token: success");       
 
   return;
+}
+
+async function tokenRefresh(token, credential, context) {
+  let tmpTrToken = token;
+  
+  if (!tmpTrToken || tmpTrToken.expiresOnTimestamp < Date.now()) {
+    tmpTrToken = await credential.getToken(context);
+  }
+
+  return tmpTrToken;
 }
 
 main()
