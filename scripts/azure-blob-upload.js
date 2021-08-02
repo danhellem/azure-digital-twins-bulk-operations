@@ -32,7 +32,7 @@ async function main() {
   } 
   
   console.log("Uploading 'import.ndjson' file into Azure Container...");
-  console.log("");
+  console.log(" ");
   
   // Create the BlobServiceClient object which will be used to create a container client
   const blobServiceClient = BlobServiceClient.fromConnectionString(
@@ -46,7 +46,7 @@ async function main() {
 
   // Create blob name
   const blobName = "import" + uuidv1() + ".ndjson";
-  //const blobUrl = blobServiceClient.url + AZURE_STORAGE_CONTAINER_NAME + '/' + blobName;
+  const blobUrl = blobServiceClient.url + _containerName + '/' + blobName;
 
   // Get blob client
   const blockBlobClient = containerClient.getBlockBlobClient(blobName);
@@ -55,6 +55,8 @@ async function main() {
   console.log('\x1b[32m',"# Uploading file '" + blobName + "'");
   const uploadFileResponse = await blockBlobClient.uploadFile(_filePath);
   console.log("\x1b[32m","# Upload complete", "\x1b[0m");
+  console.log("");
+  console.log("\x1b[33m","  " + blobUrl, "\x1b[0m");
 
   console.log("");
   console.log("Done");
