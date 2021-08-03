@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "081c4f07-43b7-46e2-9bba-b15ccecf646a",
+		"name": "DigitalTwins-BulkImport",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List import jobs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{digitaltwins-hostname}}/jobs/import?api-version=2021-06-30-preview",
+					"protocol": "https",
+					"host": [
+						"{{digitaltwins-hostname}}"
+					],
+					"path": [
+						"jobs",
+						"import"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2021-06-30-preview"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get import job",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{digitaltwins-hostname}}/jobs/import/{{job-name}}?api-version=2021-06-30-preview",
+					"protocol": "https",
+					"host": [
+						"{{digitaltwins-hostname}}"
+					],
+					"path": [
+						"jobs",
+						"import",
+						"{{job-name}}"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2021-06-30-preview"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete import job",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{digitaltwins-hostname}}/jobs/import/{{job-name}}?api-version=2021-06-30-preview",
+					"protocol": "https",
+					"host": [
+						"{{digitaltwins-hostname}}"
+					],
+					"path": [
+						"jobs",
+						"import",
+						"{{job-name}}"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2021-06-30-preview"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create import job",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"importjob1\",\r\n    \"inputBlobUri\": \"https://bulkimport.blob.core.windows.net/bulkcontainer/input.ndjson\",\r\n    \"outputBlobUri\": \"https://bulkimport.blob.core.windows.net/bulkcontainer/input.ndjson\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{digitaltwins-hostname}}/jobs/import/{{job-name}}?api-version=2021-06-30-preview",
+					"protocol": "https",
+					"host": [
+						"{{digitaltwins-hostname}}"
+					],
+					"path": [
+						"jobs",
+						"import",
+						"{{job-name}}"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2021-06-30-preview"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "grant_type",
+				"value": "implicit",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "https://www.getpostman.com/oauth2/callback",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "f7400bff-2504-4e5f-8587-eda134e5a70d",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/authorize?resource=0b07f429-9f4b-4714-9392-cc5e8e80c8b0",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "digitaltwins-hostname",
+			"value": "your-digital_twins_instance"
+		},
+		{
+			"key": "job-name",
+			"value": "import-job-1"
+		}
+	]
+}
